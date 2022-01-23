@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.flex-container{
+    display:flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+}
+
+.flex-item-1{
+    background-color: greenyellow;
+    padding: 10px;
+    flex:33.3%;
+}
+
+
+.flex-item-2{
+    background-color: rgba(224, 66, 17, 0.856);
+    padding: 10px;
+    flex:33.3%;
+}
+
+
+.flex-item-3{
+    background-color: rgb(27, 224, 250);
+    padding: 10px;
+    flex:33.3%;
+}
+
+@media (max-width: 600px) {
+    .flex-item-1, .flex-item-2, .flex-item-3{
+        flex:100%;
+        font-size: 20px;
+        margin: 0 20%;
+    }
+}
