@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="" placeholder="Emai-id" id="email"><br><br>
+            <span></span>
+    
+            <label for="number">Phone Number</label>
+            <input type="number" id="number" placeholder="phone-number">
+            <span></span>
+        </div>
+    </form>
+    
+    
+</body>
+</html>
+
+<script>
+    var email=document.getElementById("email");
+    var number=document.getElementById("number");
+    var span=document.getElementsByTagName('span');
+
+    email.onkeydown=function()
+    {
+        const regex_email = /^([A-Za-z0-9\._-]+)@([a-z0-9]+)\.([a-z]{1,8})$/;
+        const regex_email1 = /^([A-Za-z0-9\._-]+)@([a-z0-9]+)\.([a-z]{1,8})\.([a-z]{2,8})$/;
+        if(regex_email.test(email.value) || regex_email1.test(email.value))
+        {
+            // first span 
+            span[0].innerText="Your email is Valid!";
+            span[0].style.color="lime";
+        }
+        else
+        {
+            span[0].innertext="Inavlid Email Id!";
+            span[0].style.color="red";
+        }
+
+        number.onkeydown=function()
+        {
+            const regex_num = /^[0-9]{10}/;
+            if(regex_num.test(number.value))
+            {
+                // first span 
+                span[1].innerText="Your number is Valid!";
+                span[1].style.color="lime";
+            }
+            else
+            {
+                span[1].innertext="Invalid Phone number";
+                span[1].style.color="red";
+            }
+        }
+    }
+</script>
